@@ -1,16 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" content="https://raw.githubusercontent.com/sojijr/valentine-website/main/public/images/favicon.png">
-    <link rel="icon" href="public/images/favicon.png" type="image/x-icon" />  
-    <title>Happy Valentine's Day</title>
+    <link rel="icon" href="public/images/favicon.png" type="image/x-icon" />
+    <title>Para Mi Princesa 👑</title>
     <link rel="stylesheet" href="public/style.css">
-  </head>
-  <body>
+</head>
+<body>
     <canvas id="starfield"></canvas>
-    <button id="valentinesButton">Click Me! ❤</button>
+
+    <div class="container" style="text-align: center; padding: 20px; z-index: 10; max-width: 600px;">
+        <div id="quiz-container">
+            <h1 style="font-size: 2rem; margin-bottom: 30px; color: white;">¿Quieres pasar este cumpleaños conmigo, mi Osa hermosa? 👑🐻</h1>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+                <button id="yes-button" onclick="showSurprise()" style="background-color: #ff3366; color: white; border: none; padding: 15px 30px; font-size: 1.2rem; border-radius: 10px; cursor: pointer; font-weight: bold; box-shadow: 0 0 15px #ff3366; transition: all 0.2s;">SÍ ❤️</button>
+                <button id="no-button" style="background-color: #444; color: white; border: none; padding: 15px 25px; font-size: 1.1rem; border-radius: 10px; cursor: pointer; transition: all 0.2s;">No 😢</button>
+            </div>
+        </div>
+
+        <div id="surprise-container" style="display: none; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); padding: 30px; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); animation: fadeIn 1s ease;">
+            <h1 style="color: #ff3366; font-size: 2.2rem; margin-bottom: 20px;">¡Feliz Cumpleaños, Mi Osa! 👑🐻✨</h1>
+            <p style="font-size: 1.2rem; line-height: 1.7; color: #e0e0ff; text-align: justify; font-family: 'Georgia', serif;">Hoy el universo celebra el día en que nació la persona que ilumina por completo mi mundo. Tu existencia no es una simple coincidencia; estás hecha de la misma esencia mágica y brillante que las estrellas más hermosas del firmamento, y verter tu luz en mi vida es el regalo más grande que el cielo me ha podido dar. Eres mi refugio perfecto, mi constelación favorita en medio de la noche y el brillo exacto que le hacía falta a mi galaxia. Que este nuevo año de vida el universo confabule para regalarte tanta felicidad como la que tú me das a mí, y que sigas brillando con esa luz única que solo tú posees. ¡Te amo con todo mi corazón, hoy y por el resto de la eternidad! 🎂❤️🌌🚀✨</p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
-  </body>
+    <script>
+        function showSurprise() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('surprise-container').style.display = 'block';
+        }
+    </script>
+</body>
 </html>
